@@ -1,0 +1,7 @@
+yaml
+scipy
+numpy
+pandas
+biopython
+MEME
+progressbar
