@@ -1,0 +1,23 @@
+data:
+  path: '../data/'
+  SFs: '../data/Arabidopsis_SFs.xlsx'
+  expressions: '../data/expressions.xlsx'
+  genome_seq: '../data/genome.fa'
+  gtf: '../data/merged.gtf'
+outputs:
+  path: '../outputs/'
+settings:
+  R1_length: 30
+  R2_length: 30
+  R3_length: 30
+  R4_length: 30
+  input_data_type: 'excel' #excel|txt|csv
+  sep: '\t' #change this to commma or other seps
+  correlation_method: 'spearman' #spearman|pearson
+  corr_cutoff: 0.95 #high correlation
+  mode: 'demo' #full|demo
+  number_of_motifs: 3 #sets number of motifs to look for in MEME run
+  meme_mode: zoops #oops|zoops|anr --> I have only tested zoops mode for co-splicing network inference
+  motif_min_width: 4
+  motif_max_width: 7
+  motif_evalue: 'default' #default|or any number --> default is recommanded

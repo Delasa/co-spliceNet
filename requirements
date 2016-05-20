@@ -1,0 +1,4 @@
+yaml
+scipy
+numpy
+#SF file and expression file should have a column called gene_id that are comon between them
