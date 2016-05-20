@@ -1,19 +1,56 @@
-<h1>Co-SpliceNet</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Co-splicenet by Delasa</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Co-splicenet</h1>
+          <h2>Co-SpliceNet is a framework for co-splicing network inference</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/Delasa/co-spliceNet/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/Delasa/co-spliceNet/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/Delasa/co-spliceNet" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="co-splicenet" class="anchor" href="#co-splicenet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Co-SpliceNet</h1>
 
 <p>We define co-splicing as the action of the spliceosome on a group of pre-mRNAs to produce a population of coordinately expressed and spliced transcripts. We present Co-SpliceNet as a tool for co-splicing network inference, which can be used to identify splicing factors and their candidate targets pre-mRNAs. Co-SpliceNet can be applied to any transcriptome of any eukaryotic species. Understanding the mechanisms in which splicing occurs can be achieved using CLIP date via capturing RNA binding RNAs for specific splicing factors. However, CLIP experiments are not available for many species yet, but RNA-Seq datasets are available for almost every species.</p>
 
-<p><img src="https://github.com/Delasa/co-spliceNet/blob/master/images/figure1_bigger.png" alt="figure1_bigger.png" title="" /></p>
+<p><img src="https://github.com/Delasa/co-spliceNet/blob/master/images/figure1_bigger.png" alt="Figure1"></p>
 
-<h2>Project layout</h2>
+<h2>
+<a id="project-layout" class="anchor" href="#project-layout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project layout</h2>
 
-<h3>Config.yaml</h3>
+<h3>
+<a id="configyaml" class="anchor" href="#configyaml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config.yaml</h3>
 
 <p>You can change the configuration of input file names, output path, and parameters for construction of co-splicing networks. 
 Setting part in the config file demonstrates all different parameters used in Co-SpliceNet including R lengths, correlation cutoff, and <em>de novo</em> motif discovery (MEME).</p>
 
 <p><strong>Note:</strong> If mode is set to 'demo', only the co-splicing network will be constructed for one SF only. </p>
 
-<h3>Inputs</h3>
+<h3>
+<a id="inputs" class="anchor" href="#inputs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inputs</h3>
 
 <p>You will need following files for using Co-SpliceNet:</p>
 
@@ -24,20 +61,22 @@ Setting part in the config file demonstrates all different parameters used in Co
 <li><p><strong>gtf</strong>: a gtf file corresponding the location of splice variants</p></li>
 </ol>
 
-<p><strong>Note1:</strong> SFs files should have a column called "gene<em>id" which is consistent with expressions and gtf file. Expressions file should have a column called transcript</em>id and a column called gene<em>id, followed by some other columns representing expressions. Transcript</em>id should be unique for each splice variant. All the predictions will be based on transcript_id. </p>
+<p><strong>Note1:</strong> SFs files should have a column called "gene_id" which is consistent with expressions and gtf file. Expressions file should have a column called transcript_id and a column called gene_id, followed by some other columns representing expressions. Transcript_id should be unique for each splice variant. All the predictions will be based on transcript_id. </p>
 
 <p><strong>Note2:</strong> Sample input files are in the Inputs folder. If you want to use your own input files, you can put them in the inputs folder and then change the config file.</p>
 
-<h3>Outputs</h3>
+<h3>
+<a id="outputs" class="anchor" href="#outputs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Outputs</h3>
 
 <ol>
 <li><p>expressed_SFs.csv: a list of SFs found in the user's expression data.</p></li>
-<li><p>coexpression<em>with</em>SFs.txt: co-expression file among SFs and targets that meet the correlation cutoff</p></li>
+<li><p>coexpression_with_SFs.txt: co-expression file among SFs and targets that meet the correlation cutoff</p></li>
 <li><p>meme_script.sh: bash file for rerunning the MEME commands and reproducing the results</p></li>
 <li><p>cosplicing_network.txt: final cosplicing network</p></li>
 </ol>
 
-<h3>Dependencies</h3>
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
 
 <p>Co-SpliceNet has been written in Python. You'll need following packages prior to using Co-SpliceNet:</p>
 
@@ -52,15 +91,17 @@ Setting part in the config file demonstrates all different parameters used in Co
 </ul>
 
 <p><strong>Note:</strong> the "code" directory is the source root and all the paths are relative to the code directory. If you want to use command line, you should set the python path to the code directory:
-export PYTHONPATH=$PYTHONPATH:/<path_to_project>/co-splicenet/code/</p>
+export PYTHONPATH=$PYTHONPATH://co-splicenet/code/</p>
 
-<h3>Usage</h3>
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
 
 <p>python runner.py</p>
 
-<p><em>* Note: You do not need to set any argument. Make your changes in the config.yaml. *</em> </p>
+<p>** Note: You do not need to set any argument. Make your changes in the config.yaml. ** </p>
 
-<h2>Co-SpliceNet pipeline</h2>
+<h2>
+<a id="co-splicenet-pipeline" class="anchor" href="#co-splicenet-pipeline" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Co-SpliceNet pipeline</h2>
 
 <ol>
 <li><p>Identify splicing factors and splicing related proteins in the expression data</p></li>
@@ -70,8 +111,16 @@ export PYTHONPATH=$PYTHONPATH:/<path_to_project>/co-splicenet/code/</p>
 <li><p>Construct co-splicing networks for each SFs and highly correlated transcripts possessing at least one consensus RNA motif </p></li>
 </ol>
 
-<p><img src="https://github.com/Delasa/co-spliceNet/blob/master/images/Figure2_bigger.png" alt="Figure2_bigger.png" title="" /></p>
+<p><img src="https://github.com/Delasa/co-spliceNet/blob/master/images/Figure2_bigger.png" alt="Figure2"></p>
+        </section>
 
+        <footer>
+          Co-splicenet is maintained by <a href="https://github.com/Delasa">Delasa</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
 
-
-
+        
+      </div>
+    </div>
+  </body>
+</html>
