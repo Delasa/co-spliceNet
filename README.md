@@ -1,7 +1,7 @@
 # Co-SpliceNet #
 We define co-splicing as the action of the spliceosome on a group of pre-mRNAs to produce a population of coordinately expressed and spliced transcripts. We present Co-SpliceNet as a tool for co-splicing network inference, which can be used to identify splicing factors and their candidate targets pre-mRNAs. Co-SpliceNet can be applied to any transcriptome of any eukaryotic species. Understanding the mechanisms in which splicing occurs can be achieved using CLIP date via capturing RNA binding RNAs for specific splicing factors. However, CLIP experiments are not available for many species yet, but RNA-Seq datasets are available for almost every species.
 
-![figure1_bigger.png](https://bitbucket.org/repo/KBzqxB/images/1903120704-figure1_bigger.png)
+![figure1_bigger.png]((https://github.com/Delasa/co-spliceNet/blob/master/images/figure1_bigger.png))
 
 ## Project layout ##
 ### Config.yaml ###
@@ -75,4 +75,4 @@ python runner.py
 
 5. Construct co-splicing networks for each SFs and highly correlated transcripts possessing at least one consensus RNA motif 
 
-![Figure2_bigger.png](https://bitbucket.org/repo/KBzqxB/images/3991860130-Figure2_bigger.png)
+![Figure2_bigger.png](https://github.com/Delasa/co-spliceNet/blob/master/images/Figure2_bigger.png)
