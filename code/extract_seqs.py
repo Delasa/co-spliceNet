@@ -142,8 +142,12 @@ def get_seqs(status='R1', tcons_id='TCONS_00000001', exons_number='1', gtf_proce
     elif status == 'R4':
         seq = seqfinder(chr, end + 1, end + R4_length + 1,strand, genome)
     else:
-        print 'invalid R'
-        return False
+        print 'invalid R --> going for R1'
+        if exon_length < R1_length:
+            return False
+        else:
+            seq = seqfinder(chr, start - R1_length , start,strand, genome)
+        #return False
     seq.id = tcons_id + '_' +exons_number
     return seq
 
@@ -156,7 +160,8 @@ def extract_and_write_df(status, df, filename='output', SF_name='SF', genome='')
     for tcons,exon in pbar(df.index):
        # print(tcons, exon)
         seq = get_seqs(status=status,tcons_id=tcons, exons_number=exon, gtf_processed=df, genome=genome)
-        if seq != False:
+        #print (seq)
+        if type(seq) != bool:
             thislist.append(seq)
     if SF_name not in os.listdir(output_path):
         os.makedirs(output_path + SF_name)
