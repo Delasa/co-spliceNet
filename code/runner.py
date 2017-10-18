@@ -5,6 +5,7 @@ from make_coexpression_network import make_coexpression_network
 from extract_seqs_for_SF import extract_seqs_for_SFs
 from run_MEME import run_meme
 from make_cosplicing_network import find_cosplied_transcipts
+import os
 
 
 config = get_config()

@@ -22,6 +22,19 @@ genome_seq = config['data']['genome_seq']
 gtf = config['data']['gtf']
 output_path = config['outputs']['path']
 
+
+
+if not os.path.exists(genome_seq):
+    raise ValueError ('%s not found! Please make sure to unzip the ../data/genome.fa.zip or load other genomes'%genome_seq)
+
+
+if not os.path.exists(gtf):
+    raise ValueError ('%s not found! Please make sure to unzip the ../data/merged.gtf.zip or load other genomes' %gtf)
+
+
+
+
+
 def print_timestamp():
     import time
     import datetime

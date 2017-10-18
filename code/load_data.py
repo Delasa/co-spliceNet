@@ -19,8 +19,14 @@ SFs = config['data']['SFs']
 expressions = config['data']['expressions']
 output_path = config['outputs']['path']
 
+
 input_type = config['settings']['input_data_type']
 sep = config['settings']['sep']
+
+
+if not os.path.exists(output_path):
+    os.makedirs(output_path)
+# if not os.path.exists()
 
 def read_data(filename):
     print 'started reading %s' %filename
